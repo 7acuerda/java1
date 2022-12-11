@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Desafio 1 JavaScript</title>
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card-imagen">
+        </div>
+        <div class="card-contenido">
+            <p class="subtitulo">Guitarras Exclusivas</p>
+            <input class="entrada0" type="text" placeholder="Color">
+            <input class="entrada1" type="text" placeholder="Cantidad">
+            <p class="precio">Precio : $290.990</p>
+            <button class="btn"><b>Calcular</b></button>
+        </div>
+    </div>
+    <div class="side">
+        <p>Total: $<span class="total"></span></p>
+        <p>Cantidad: <span class="cantidad"></span></p>
+        <div class="color">
+            <p>Color:</p>
+            <div class="figura"></div>
+        </div>
+    </div>
+    <script>
+        total = document.querySelector("p .total");
+        total.innerHTML = "0";
+        cantidad = document.querySelector("p .cantidad");
+        cantidad.innerHTML = "0";
+        boton = document.querySelector("button");
+        boton.addEventListener("click", () => {
+            cantidadSelect = document.querySelector(".entrada1");
+            cantidad = cantidadSelect.value;
+            resultado = cantidad * 290990;
+            total = document.querySelector("p .total");
+            total.innerHTML = resultado;
+            cant = document.querySelector("p .cantidad");
+            cant.innerHTML = cantidad;
+            colorSelect = document.querySelector(".entrada0");
+            color = colorSelect.value;
+            fig = document.querySelector(".figura")
+            fig.style.backgroundColor = color;
+
+        });
+    </script>
+</body>
+
+</html>
